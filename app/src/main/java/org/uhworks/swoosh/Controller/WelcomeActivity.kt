@@ -1,9 +1,9 @@
-package org.uhworks.swoosh
+package org.uhworks.swoosh.Controller
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_welcome.*
+import org.uhworks.swoosh.R
 
 class WelcomeActivity : BaseActivity() {
 
