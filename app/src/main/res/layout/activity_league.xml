@@ -43,21 +43,25 @@
         <ToggleButton
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:id="@+id/menBtn" android:textOff="@string/men_s"
-                android:textOn="@string/men_s" android:text="@string/men_s" tools:text="Men's" android:textColor="@color/colorAccent"
-                android:background="@drawable/swoosh_toggle" android:fontFamily="@font/montserrat"/>
+                android:textOn="@string/men_s" android:text="@string/men_s" tools:text="Men's"
+                android:textColor="@color/colorAccent"
+                android:background="@drawable/swoosh_toggle" android:fontFamily="@font/montserrat"
+                android:onClick="onMensClicked"/>
         <ToggleButton
                 android:text="@string/women_s"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:id="@+id/womenBtn" android:layout_marginTop="16dp"
                 android:layout_marginBottom="8dp" android:textOff="@string/women_s" android:textOn="@string/women_s"
                 tools:text="Women's" android:textColor="@color/colorAccent"
-                android:background="@drawable/swoosh_toggle" android:fontFamily="@font/montserrat"/>
+                android:background="@drawable/swoosh_toggle" android:fontFamily="@font/montserrat"
+                android:onClick="onWomensClicked"/>
         <ToggleButton
                 android:text="@string/co_ed"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:id="@+id/coedBtn" tools:text="@string/co_ed"
                 android:textOff="@string/co_ed" android:textOn="@string/co_ed" android:textColor="@color/colorAccent"
-                android:background="@drawable/swoosh_toggle" android:fontFamily="@font/montserrat"/>
+                android:background="@drawable/swoosh_toggle" android:fontFamily="@font/montserrat"
+                android:onClick="onCoedClicked"/>
     </LinearLayout>
     <Button
             android:text="@string/next"
