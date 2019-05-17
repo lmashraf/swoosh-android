@@ -31,8 +31,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/startBtn" android:layout_marginBottom="16dp"
             app:layout_constraintBottom_toBottomOf="@+id/backgroundImg" app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="8dp" app:layout_constraintHorizontal_bias="0.0"
+            android:layout_marginEnd="16dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="16dp" app:layout_constraintHorizontal_bias="0.0"
             android:fontFamily="@font/montserrat" android:textSize="14sp" android:background="@drawable/swoosh_button"
             android:textColor="@color/colorAccent"/>
     <TextView

@@ -13,4 +13,8 @@
         league
     </string>
     <string name="on_going_all_out">ON GOING ALL OUT</string>
+    <string name="i_am_a">I am a:</string>
+    <string name="beginner">BEGINNER</string>
+    <string name="baller">BALLER</string>
+    <string name="finish">FINISH</string>
 </resources>
