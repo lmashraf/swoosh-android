@@ -5,16 +5,14 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_skill.*
+import org.uhworks.swoosh.Models.Player
 import org.uhworks.swoosh.R
-import org.uhworks.swoosh.Utilities.*
+import org.uhworks.swoosh.Utilities.EXTRA_PLAYER
 
 class SkillActivity : BaseActivity() {
 
     // Read extra
-    var league = ""
-
-    // Write extra
-    var skill = ""
+    private lateinit var player: Player
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -22,19 +20,18 @@ class SkillActivity : BaseActivity() {
         setContentView(R.layout.activity_skill)
 
         // Get the intent's extra value from key
-        league = intent.getStringExtra(EXTRA_LEAGUE)
+        player = intent.getParcelableExtra(EXTRA_PLAYER)
     }
 
     // Button: Finish
     fun onSkillFinishClicked(view: View) {
 
-        if(skill != "") {
+        if(player.skill!= "") {
             // Create Intent
             val finishActivity = Intent(this, FinishActivity::class.java)
 
             // Add Extra as key,value to pass to the next Activity
-            finishActivity.putExtra(EXTRA_SKILL, skill)
-            finishActivity.putExtra(EXTRA_LEAGUE, league)
+            finishActivity.putExtra(EXTRA_PLAYER, player)
 
             // Start Activity
             startActivity(finishActivity)
@@ -47,13 +44,13 @@ class SkillActivity : BaseActivity() {
     fun onBallerClicked(view: View) {
 
         beginnerSkillBtn.isChecked = false
-        skill = "baller"
+        player.skill = "baller"
     }
 
     // Toggle Button: Beginner
     fun onBeginnerClicked(view: View){
 
         ballerSkillBtn.isChecked = false
-        skill = "beginner"
+        player.skill = "beginner"
     }
 }

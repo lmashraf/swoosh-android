@@ -5,12 +5,13 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_league.*
-import org.uhworks.swoosh.Utilities.EXTRA_LEAGUE
+import org.uhworks.swoosh.Models.Player
 import org.uhworks.swoosh.R
+import org.uhworks.swoosh.Utilities.EXTRA_PLAYER
 
 class LeagueActivity : BaseActivity() {
 
-    var league = ""
+    var player = Player("", "")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,7 +26,7 @@ class LeagueActivity : BaseActivity() {
         coedBtn.isChecked = false
 
         // Set League
-        league = "mens"
+        player.league = "mens"
     }
 
     // ToggleButton: Women's
@@ -36,7 +37,7 @@ class LeagueActivity : BaseActivity() {
         coedBtn.isChecked = false
 
         // Set League
-        league = "womens"
+        player.league = "womens"
     }
 
     // ToggleButton: Co-Ed's
@@ -47,18 +48,18 @@ class LeagueActivity : BaseActivity() {
         womenBtn.isChecked = false
 
         // Set League
-        league = "co-ed"
+        player.league = "co-ed"
     }
 
     // Button: Next
     fun leagueNextClicked(view: View) {
 
-        if( league != "" ) {
+        if( player.league != "" ) {
             // Create Intent
             val skillActivity = Intent(this, SkillActivity::class.java)
 
             // Add Extra as key,value to pass to the next Activity
-            skillActivity.putExtra(EXTRA_LEAGUE, league )
+            skillActivity.putExtra(EXTRA_PLAYER, player)
 
             // Start Activity
             startActivity(skillActivity)

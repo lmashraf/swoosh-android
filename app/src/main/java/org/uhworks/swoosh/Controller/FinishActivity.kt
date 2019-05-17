@@ -3,9 +3,9 @@ package org.uhworks.swoosh.Controller
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_finish.*
+import org.uhworks.swoosh.Models.Player
 import org.uhworks.swoosh.R
-import org.uhworks.swoosh.Utilities.EXTRA_LEAGUE
-import org.uhworks.swoosh.Utilities.EXTRA_SKILL
+import org.uhworks.swoosh.Utilities.EXTRA_PLAYER
 
 class FinishActivity : AppCompatActivity() {
 
@@ -14,10 +14,9 @@ class FinishActivity : AppCompatActivity() {
         setContentView(R.layout.activity_finish)
 
         // Get the intent's extra value from key
-        val league = intent.getStringExtra(EXTRA_LEAGUE)
-        val skill = intent.getStringExtra(EXTRA_SKILL)
+        val player = intent.getParcelableExtra<Player>(EXTRA_PLAYER)
 
         // Change value of the text field depending on the values of previous extras
-        searchLeaguesTxt.text = "Looking for $league $skill league near you..."
+        searchLeaguesTxt.text = "Looking for ${player.league} ${player.skill} league near you..."
     }
 }
