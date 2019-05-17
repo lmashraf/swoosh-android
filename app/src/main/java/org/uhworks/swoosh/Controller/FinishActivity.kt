@@ -1,5 +1,6 @@
 package org.uhworks.swoosh.Controller
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_finish.*

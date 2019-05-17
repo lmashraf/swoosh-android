@@ -11,7 +11,25 @@ import org.uhworks.swoosh.Utilities.EXTRA_PLAYER
 
 class LeagueActivity : BaseActivity() {
 
-    var player = Player("", "")
+    private var player = Player("", "")
+
+    // Save instance state after an orientation change
+    override fun onSaveInstanceState(outState: Bundle?) {
+        super.onSaveInstanceState(outState)
+
+        // Save state of player instance
+        outState?.putParcelable(EXTRA_PLAYER, player)
+    }
+
+    // Restore instance state after an orientation change
+    override fun onRestoreInstanceState(savedInstanceState: Bundle?) {
+        super.onRestoreInstanceState(savedInstanceState)
+
+        // If we already have an instance state saved
+        if(savedInstanceState != null) {
+            player = savedInstanceState.getParcelable(EXTRA_PLAYER)
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
